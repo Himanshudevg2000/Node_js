@@ -23,8 +23,10 @@
 // sending request
 
 const http = require('http');
+const fs = require('fs');
 const server = http.createServer((req,res) => {
     const url = req.url;
+    const method = req.mthod
 
     if(url === '/home'){
         res.write("<html>");
@@ -44,6 +46,21 @@ const server = http.createServer((req,res) => {
         res.write("<body> <h2> Welcome to NodeJs project <h2> </body>");
         res.write("</html>");
         return res.end()
+    }
+
+    if(url === '/text' ){
+        res.write("<html>");
+        res.write("<head> <title> Enter message </title> </head> ");
+        res.write("<body> <form action='/message' method='POST'> <input type='text' name='message'> <button> Create Message </button>  </form> </body>");
+        res.write("</html>");
+        return res.end()
+    }
+
+    if(url === '/message' ){
+        fs.writeFileSync('message.txt','message created');
+        res.statusCode = 302;
+        res.setHeader('Location', '/home');
+        return res.end();
     }
 
     res.write("<html>");
