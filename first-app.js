@@ -30,16 +30,20 @@ const server = http.createServer((req,res) => {
         res.write("<html>");
         res.write("<body> <h2> Welcome home <h2> </body>");
         res.write("</html>");
+        return res.end()
+       
     }
     if(url === '/about'){
         res.write("<html>");
         res.write("<body> <h2> Welcome to About this page <h2> </body>");
         res.write("</html>");
+        return res.end()
     }
     if(url === '/node'){
         res.write("<html>");
         res.write("<body> <h2> Welcome to NodeJs project <h2> </body>");
         res.write("</html>");
+        return res.end()
     }
 
     res.write("<html>");
