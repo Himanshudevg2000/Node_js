@@ -62,6 +62,10 @@ const server = http.createServer((req,res) => {
             console.log(chunk);
             body.push(chunk);
         });
+        //way to read files in console
+        const text = fs.readFileSync('message.txt', 'UTF8');
+        console.log(text);
+
         return req.on('end', () => {
             const parsedBody = Buffer.concat(body).toString();
             // console.log(parsedBody);
@@ -73,11 +77,13 @@ const server = http.createServer((req,res) => {
             });
         });
     }
-    const readFileLines = filename =>
-    fs.readFileSync(filename)
-    .toString('UTF8')
-    const arr = readFileLines('message.txt');
-    console.log(arr);
+
+    // another way to read files in console
+    // const readFileLines = filename =>
+    // fs.readFileSync(filename)
+    // .toString('UTF8')
+    // const arr = readFileLines('message.txt');
+    // console.log(arr);
 
     res.write("<html>");
     res.write("<title> NodeJS </title>");  // changes the title of page
