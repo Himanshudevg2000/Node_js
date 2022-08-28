@@ -1,0 +1,24 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "comple Node.js guide",
+  "main": "first-app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon first-app.js",
+    "start-server": "node first-app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Himanshudevg2000/Node_js.git"
+  },
+  "author": "\"himanshu devgade\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Himanshudevg2000/Node_js/issues"
+  },
+  "homepage": "https://github.com/Himanshudevg2000/Node_js#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
